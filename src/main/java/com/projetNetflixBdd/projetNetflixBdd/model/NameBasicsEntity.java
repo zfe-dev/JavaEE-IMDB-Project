@@ -1,4 +1,4 @@
-package com.projetNetflixBdd.projetNetflixBdd;
+package com.projetNetflixBdd.projetNetflixBdd.model;
 
 import javax.persistence.*;
 import java.util.Objects;
