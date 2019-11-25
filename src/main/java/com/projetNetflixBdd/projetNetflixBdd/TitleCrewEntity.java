@@ -12,6 +12,7 @@ public class TitleCrewEntity {
     private String writers;
 
     @Id
+    @GeneratedValue
     @Column(name = "_id")
     public Integer getId() {
         return id;

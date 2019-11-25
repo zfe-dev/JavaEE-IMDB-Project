@@ -17,6 +17,7 @@ public class TitleAkasEntity {
     private String isOriginalTitle;
 
     @Id
+    @GeneratedValue
     @Column(name = "_id")
     public Integer getId() {
         return id;

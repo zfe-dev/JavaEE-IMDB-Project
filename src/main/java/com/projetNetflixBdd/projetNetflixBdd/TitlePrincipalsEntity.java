@@ -15,6 +15,7 @@ public class TitlePrincipalsEntity {
     private String characters;
 
     @Id
+    @GeneratedValue
     @Column(name = "_id")
     public Integer getId() {
         return id;

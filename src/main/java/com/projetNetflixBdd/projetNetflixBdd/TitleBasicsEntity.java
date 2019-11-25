@@ -18,6 +18,7 @@ public class TitleBasicsEntity {
     private String genres;
 
     @Id
+    @GeneratedValue
     @Column(name = "_id")
     public Integer getId() {
         return id;

@@ -15,6 +15,7 @@ public class NameBasicsEntity {
     private String knownForTitles;
 
     @Id
+    @GeneratedValue
     @Column(name = "_id")
     public Integer getId() {
         return id;

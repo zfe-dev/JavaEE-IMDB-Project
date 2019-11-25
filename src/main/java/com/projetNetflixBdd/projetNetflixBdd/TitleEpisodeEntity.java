@@ -13,6 +13,7 @@ public class TitleEpisodeEntity {
     private String episodeNumber;
 
     @Id
+    @GeneratedValue
     @Column(name = "_id")
     public Integer getId() {
         return id;

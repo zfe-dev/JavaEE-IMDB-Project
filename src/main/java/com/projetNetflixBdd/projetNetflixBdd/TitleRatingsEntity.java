@@ -12,6 +12,7 @@ public class TitleRatingsEntity {
     private String numVotes;
 
     @Id
+    @GeneratedValue
     @Column(name = "_id")
     public Integer getId() {
         return id;
