@@ -6,7 +6,11 @@ import java.util.Objects;
 @Entity
 @Table(name = "name_basics", schema = "imdb", catalog = "")
 public class NameBasicsEntity {
-    private Integer id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer _id;
+
     private String nconst;
     private String primaryName;
     private String birthYear;
@@ -14,17 +18,23 @@ public class NameBasicsEntity {
     private String primaryProfession;
     private String knownForTitles;
 
-    @Id
-    @GeneratedValue
-    @Column(name = "_id")
-    public Integer getId() {
-        return id;
+    public NameBasicsEntity(String nconst, String primaryName, String birthYear, String deathYear, String primaryProfession, String knownForTitles) {
+        this.nconst = nconst;
+        this.primaryName = primaryName;
+        this.birthYear = birthYear;
+        this.deathYear = deathYear;
+        this.primaryProfession = primaryProfession;
+        this.knownForTitles = knownForTitles;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    /*public Integer getId() {
+            return id;
+        }
 
+        public void setId(Integer id) {
+            this.id = id;
+        }
+    */
     @Basic
     @Column(name = "nconst")
     public String getNconst() {
@@ -90,7 +100,7 @@ public class NameBasicsEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         NameBasicsEntity that = (NameBasicsEntity) o;
-        return Objects.equals(id, that.id) &&
+        return Objects.equals(_id, that._id) &&
                 Objects.equals(nconst, that.nconst) &&
                 Objects.equals(primaryName, that.primaryName) &&
                 Objects.equals(birthYear, that.birthYear) &&
@@ -102,6 +112,6 @@ public class NameBasicsEntity {
     @Override
     public int hashCode() {
 
-        return Objects.hash(id, nconst, primaryName, birthYear, deathYear, primaryProfession, knownForTitles);
+        return Objects.hash(_id, nconst, primaryName, birthYear, deathYear, primaryProfession, knownForTitles);
     }
 }

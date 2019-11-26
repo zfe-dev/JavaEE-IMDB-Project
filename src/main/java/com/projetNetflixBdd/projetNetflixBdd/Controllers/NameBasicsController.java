@@ -16,16 +16,15 @@ public class NameBasicsController {
         this.filmRepo = film;
     }
 
-    @GetMapping
-    public String Ajouter(@RequestParam(name = "name", required = false, DefaultValue = "world") String name,Model model){
+    @GetMapping("/AjouterInfo")
+    public String Ajouter(@RequestParam(name = "name", required = false, defaultValue = "world") String name,Model model){
 
         model.addAttribute("name", name);
-
-        NameBasicsEntity N = new NameBasicsEntity();
+        NameBasicsEntity N = new NameBasicsEntity("tutu",name,"123","56","lkl","kk");
         N.setPrimaryName(name);
         filmRepo.save(N);
 
-        return "AjouterInfo.html";
+        return "AjouterInfo";
     }
 
 }
